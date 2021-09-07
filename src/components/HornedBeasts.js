@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Button, Col } from "react-bootstrap";
+import SelectedBeast from "./SelectedBeast";
 
 class HornedBeasts extends Component {
   constructor(props) {
@@ -21,7 +22,17 @@ class HornedBeasts extends Component {
       <>
         <Col>
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={this.props.imageUrl} />
+            <Card.Img
+              variant="top"
+              src={this.props.imageUrl}
+              onClick={() => {
+                this.props.handleOpen(
+                  this.props.title,
+                  this.props.imageUrl,
+                  this.props.description
+                );
+              }}
+            />
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>
