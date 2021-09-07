@@ -1,37 +1,43 @@
-import React, { Component } from 'react'
-import votesRed from '../img/votesRed.png'
+import React, { Component } from "react";
+import { Card, Button, Col } from "react-bootstrap";
 
 class HornedBeasts extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props){
-        
-        super(props);
-        
-        this.state = {
-            favState : this.props.favNum,
-        }
-    }
+    this.state = {
+      favState: 0,
+    };
+  }
 
-    favRaise = () => {
-        this.setState ({
-            favNum : this.state.favState+1,
+  favRaise = () => {
+    this.setState({
+      favState: this.state.favState + 1,
+    });
+  };
 
-        })
-
-        console.log('hello');
-    }
-
-    render() {
-        return (
-            <>
-                <h2>{this.props.title}</h2>
-                <img src={this.props.imageUrl} alt="" title="" />
-                <p>{this.props.description}</p>
-                <button onClick = {this.favRaise}>Vote for favorites</button>
-                <p>{this.state.favState}</p>
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={this.props.imageUrl} />
+            <Card.Body>
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>
+                {this.props.description}
+                <br />
+                &#128153; {this.state.favState}
+              </Card.Text>
+              <Button variant="primary" onClick={this.favRaise}>
+                Vote
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </>
+    );
+  }
 }
 
-export default HornedBeasts
+export default HornedBeasts;
