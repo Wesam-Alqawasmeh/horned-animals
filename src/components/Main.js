@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
-import HornedBeasts from './HornedBeasts';
-import data from '../data.json';
+import React, { Component } from "react";
+import HornedBeasts from "./HornedBeasts";
+import data from "../data.json";
+import { Row } from "react-bootstrap";
 
 class Main extends Component {
-    render() {
-        return (
-            <>
-
-                {data.map((item) => {
-                   
-                    return( <HornedBeasts title={item.title} imageUrl={item.image_url} description={item.description}  favNum={0} />);
-                })}
-                
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <Row>
+          {data.map((item) => {
+            return (
+              <HornedBeasts
+                title={item.title}
+                imageUrl={item.image_url}
+                description={item.description}
+              />
+            );
+          })}
+        </Row>
+      </>
+    );
+  }
 }
 
-export default Main
+export default Main;
