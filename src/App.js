@@ -35,17 +35,40 @@ class App extends Component {
   };
 
   dataFilter = (e) => {
-    e.target.value === "1" ? 
+    if (e.target.value === "1") {
+      this.setState({
+        beastData: data.filter(item => {
+          return item.horns === 1;
+        })
+      })
+    }else
+    if (e.target.value === "2") {
+      this.setState({
+        beastData: data.filter(item => {
+          return item.horns === 2;
+        })
+      })
+    }else
+    if (e.target.value === "3") {
+      this.setState({
+        beastData: data.filter(item => {
+          return item.horns === 3;
+        })
+      })
+    }else
+    if (e.target.value === "4") {
+      this.setState({
+        beastData: data.filter(item => {
+          return item.horns === 100;
+        })
+      })
+    }else
+    if (e.target.value === "0") {
+      this.setState({
+        beastData: data,
+      })
+    }
 
-    this.setState({
-      beastData: this.state.beastData.sort((a,b) => {
-        return a.horns-b.horns;
-      }),
-    }) :
-    this.setState({
-      beastData: data,
-    })
-    console.log("f");
   }
 
   render() {
@@ -53,13 +76,15 @@ class App extends Component {
       <>
         <Header />
 
-        <Form.Select aria-label="Default select example" onChange={(e) => this.dataFilter(e)}>
-          <option>Select Filter</option>
-          <option value="1">Filter by number of hornes </option>
-          <option value="3">Filter by number of hornes </option>
+        <Form.Select aria-label="Default select example" onChange={(e) => this.dataFilter(e)}style={{margin: "30px 0px"}}>
+          <option value="0">Select Filter</option>
+          <option value="1">Filter by number of hornes 1 </option>
+          <option value="2">Filter by number of hornes 2 </option>
+          <option value="3">Filter by number of hornes 3 </option>
+          <option value="4">Filter by number of hornes 100 </option>
         </Form.Select>
 
-        <Row>
+        <Row style={{width: "100%",margin: "0px"}}>
           {this.state.beastData.map((item) => {
             return (
               <Main

@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
         return (
             <>
-              <p>All Right Reserved 2021 &copy; Wesam Alqawasmeh</p> 
+              <p style={{marginTop: "30px", backgroundColor: "black", color: "white", height:"100%", textAlign:"center"}} >All Right Reserved 2021 &copy; Wesam Alqawasmeh</p> 
             </>
         )
     }

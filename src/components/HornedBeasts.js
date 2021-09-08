@@ -20,8 +20,8 @@ class HornedBeasts extends Component {
   render() {
     return (
       <>
-        <Col>
-          <Card style={{ width: "18rem" }}>
+        <Col style={{ padding: "0px",}}>
+          <Card style={{ width: "350px", height: "500px", margin: "20px auto", border:"5px solid black", borderRadius: "10px" }}>
             <Card.Img
               variant="top"
               src={this.props.imageUrl}
@@ -34,7 +34,7 @@ class HornedBeasts extends Component {
               }}
               height = "250px"
             />
-            <Card.Body>
+            <Card.Body style={{borderTop: "5px solid black"}}>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>
                 {this.props.description}
