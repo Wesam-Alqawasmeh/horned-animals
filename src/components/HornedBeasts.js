@@ -32,13 +32,14 @@ class HornedBeasts extends Component {
                   this.props.description
                 );
               }}
+              height = "250px"
             />
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>
                 {this.props.description}
                 <br />
-                &#128153; {this.state.favState}
+                &#128153; {this.state.favState} &nbsp;&nbsp;&nbsp; Horns: {this.props.horns}
               </Card.Text>
               <Button variant="primary" onClick={this.favRaise}>
                 Vote

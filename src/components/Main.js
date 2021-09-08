@@ -10,6 +10,7 @@ class Main extends Component {
           title={this.props.title}
           imageUrl={this.props.imageUrl}
           description={this.props.description}
+          horns={this.props.horns}
           handleOpen={this.props.handleOpen}
         />
       </>
